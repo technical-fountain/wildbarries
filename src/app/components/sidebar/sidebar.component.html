@@ -1,0 +1,6 @@
+<div class="sidebar" [ngClass]="showSideBar?'translate':''">
+    <div class="category" *ngFor="let category of categories">
+        <img [src]="'images/categories/'+category.imageName+'.svg'" alt="">
+        <span>{{category.categoryName}}</span>
+    </div>
+</div>

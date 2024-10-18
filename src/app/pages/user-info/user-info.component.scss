@@ -1,0 +1,83 @@
+.user-info {
+    height: 85vh;
+    overflow-y: auto;
+
+    .form {
+        padding: 20px 60px;
+        margin: 20px auto;
+        width: 50%;
+        background-color: rgb(245, 241, 241);
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+
+        button {
+            width: 30%;
+            height: 30px;
+            padding: 5px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #a73afd;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: 500;
+            font-size: 18px;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+        }
+
+        input,
+        select {
+            border-radius: 5px;
+            border: 1px solid gray;
+            outline: none;
+            height: 30px;
+            padding: 5px 10px;
+        }
+
+        .billing-details {
+            gap: 20px;
+
+            & div {
+                width: 100%;
+            }
+        }
+
+        & div {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .exp-date,
+        .zip-code-details {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: start;
+            gap: 20px;
+        }
+    }
+}
+
+// .ng-invalid{
+//     border-color:red !important ;
+// }
+
+.red {
+    border: 2px solid red !important;
+}
+
+.red-color {
+    color: red;
+    font-size: 13px;
+}

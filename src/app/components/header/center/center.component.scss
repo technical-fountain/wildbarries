@@ -1,0 +1,44 @@
+.center {
+    width: 600px;
+
+    .searchbar {
+        background-color: white;
+        padding: 0 20px;
+        border-radius: 18px;
+        width: 100%;
+        display: flex;
+        height: 55px;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+
+        img:hover {
+            cursor: pointer;
+        }
+
+        &img:nth-child(2):hover {
+            background-color: gray;
+            padding: 2px;
+            border-radius: 5px;
+        }
+
+        input {
+            color: rgb(74, 73, 73);
+            font-size: 17px;
+            border: none;
+            width: 100%;
+            height: 100%;
+            outline: none;
+
+            &::placeholder {
+                font-size: 17px;
+                color: rgb(169, 166, 166);
+            }
+        }
+
+    }
+}
+
+.hide {
+    display: none;
+}

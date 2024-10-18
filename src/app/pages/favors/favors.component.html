@@ -1,0 +1,20 @@
+<div class="favors">
+    <div class="favor-products">
+        <h2>Your Favorites</h2>
+        <div class="favor-product" *ngFor="let favorItem of favorsProducts">
+            <div class="favor-image">
+                <img [src]="favorItem.thumbnail" alt="">
+            </div>
+            <div class="favor-product-details">
+                <div class="favor-product-title">
+                    {{favorItem.title}}
+                </div>
+                <div class="favor-product-actions">
+                    <div class="delete" (click)="removeFromFavors(favorItem)">
+                        <img src="images/signs/delete.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="login">
+    <div class="login-form" [formGroup]="formGroup">
+        <div class="form-details">
+            <h1>Sign in or create an account</h1>
+            <div class="phone-number" [ngClass]="(checkPhoneNumber && formGroup.get('phoneNumber')?.errors)?'red':''">
+                <div class="flag-check" (click)="toggleShowCounties()">
+                    <img [src]="'images/flags/'+loginCountries[currentCountryId].countryFlagImage +'.svg'" alt="">
+                    <img src="images/signs/down.svg" alt="" *ngIf="!showCountries">
+                    <img src="images/signs/up.svg" alt="" *ngIf="showCountries">
+
+                </div>
+                <span>{{loginCountries[currentCountryId].countryCode}}</span>
+                <input type="text" placeholder="00 00 00 00" formControlName="phoneNumber">
+            </div>
+            <div class="errors">
+                <span class="error-Message" *ngIf="checkPhoneNumber && formGroup.get('phoneNumber')?.errors?.['numberCheck']">Phone number can contain only numbers</span>
+                <span class="error-Message" *ngIf="checkPhoneNumber && (formGroup.get('phoneNumber')?.errors?.['minlength'] || formGroup.get('phoneNumber')?.errors?.['maxlength'])">Phone number can contain 8 symbols</span>
+            </div>
+            <button (click)="getCode()">Get Code</button>
+            <div class="account-rules">
+                <input type="checkbox" checked>
+                <span>I agree with the rules for using the trading platform and return </span>
+            </div>
+        </div>
+
+        <app-login-countries *ngIf="showCountries" [loginCountries]="loginCountries"
+            (changeCountry)="changeCountry($event)">
+
+        </app-login-countries>
+    </div>
+</div>

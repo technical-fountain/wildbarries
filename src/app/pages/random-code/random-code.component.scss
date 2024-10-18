@@ -1,0 +1,52 @@
+.random-code {
+    height: 70vh;
+
+    .random-code-form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 4px 4px 31px 0px rgba(34, 60, 80, 0.2);
+        margin: 50px auto;
+        width: 500px;
+        padding: 40px;
+        position: relative;
+        background-color: white;
+        border-radius: 15px;
+
+        h2 {
+            font-size: 25px;
+            color: rgb(37, 36, 36);
+        }
+
+        span {
+            color: rgb(121, 121, 121);
+        }
+
+        .code {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            gap: 10px;
+
+            input {
+                width: 13%;
+                height: 55px;
+                border-radius: 10px;
+                border-color: transparent;
+                background-color: rgb(232, 230, 230);
+                font-size: 25px;
+                font-weight: 600;
+                color: rgb(83, 82, 82);
+                text-align: center;
+            }
+        }
+    }
+}
+
+.ng-invalid {
+    border-color: red !important;
+}

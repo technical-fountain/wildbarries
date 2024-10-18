@@ -1,0 +1,9 @@
+<div class="login-countries">
+    <h3>Country Code</h3>
+    <div class="country" *ngFor="let item of loginCountries"
+     (click)="handleClick(item,$event)">
+        <img [src]="'images/flags/'+item.countryFlagImage+'.svg'" alt="">
+        <span>{{item.countryName}}</span>
+        <span>{{item.countryCode}}</span>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div *ngIf="isFormVisible" class="login-form-container">
+  <div class="login-form-header">
+    <h2>Войти или создать профиль</h2>
+    <button (click)="closeForm()">Close</button>
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+    <div *ngIf="loginForm.get('phoneNumber')?.touched && loginForm.get('phoneNumber')?.invalid">
+      <div *ngIf="loginForm.get('phoneNumber')?.errors?.['required']">Phone number is required.</div>
+      <div *ngIf="loginForm.get('phoneNumber')?.errors?.['invalidPhoneNumber']">Phone number must be exactly 8 digits.</div>
+    </div>
+
+    <div class="form-content">
+      <input
+        type="text"
+        placeholder="+374 XX XX-XX-XX"
+        formControlName="phoneNumber"
+        [ngClass]="{'invalid-input': loginForm.get('phoneNumber')?.touched && loginForm.get('phoneNumber')?.invalid}"
+      />
+      <button type="submit">Получить код</button>
+    </div>
+
+    <div class="country-code">
+      <select>
+        <option value="+374">Armenia +374</option>
+        <option value="+7">Russia +7</option>
+      </select>
+    </div>
+  </form>
+</div>

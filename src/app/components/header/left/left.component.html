@@ -1,0 +1,5 @@
+<div class="left">
+    <div class="logo" [routerLink]="['/']"><img src="//static-basket-01.wbbasket.ru/vol0/i/v3/header/logoWb.svg" width="216" height="58" alt="Wildberries"></div>
+    <button (click)="toggleSidebar()"><img src="https://static.thenounproject.com/png/3874018-200.png"></button>
+    <app-sidebar *ngIf="isOpened"></app-sidebar>
+</div>

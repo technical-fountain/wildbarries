@@ -1,0 +1,7 @@
+<div class="header-right">
+    <button (click)="openLoginForm()"><img src="https://cdn-icons-png.freepik.com/512/56/56832.png" [routerLink]="['login']"></button>
+    <button><img class="basket" src="https://cdn-icons-png.flaticon.com/512/1374/1374128.png" [routerLink]="['/basket']" class="item-count-badge" >      
+        <span class="badge"*ngIf="totalQuantity > 0">{{ totalQuantity }}</span></button>
+</div>
+
+<app-login *ngIf="loginFormVisible"></app-login>

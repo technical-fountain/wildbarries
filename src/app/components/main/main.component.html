@@ -1,0 +1,23 @@
+<div class="product-container">
+  <div *ngFor="let product of products" class="product-card">
+    <img [src]="product.thumbnail" alt="{{ product.title }}"  (click)="goToProductInfo(product.id)"/>
+    <h3>{{ product.title }}</h3>
+    <p>Price: {{ product.price }} $</p>
+    <p>Discount Percentage: {{ product.discountPercentage }}%</p>
+    <p>Discounted Total: {{ product.discountedTotal }} $</p>
+    <p>Quantity: {{ product.quantity }}</p>
+    <p>Total: {{ product.total }} $</p>
+    
+    <button *ngIf="!isInCart(product)" (click)="addToCart(product)">
+      в корзину
+    </button>
+    <button *ngIf="isInCart(product)" [routerLink]="['/basket']">
+      В корзине
+    </button>
+    
+    <div *ngIf="isAlertVisible" class="alert-box" 
+     [ngClass]="{'show': !isAlertHidden, 'hide': isAlertHidden}">
+  {{ alertMessage }}
+    </div>
+  </div>
+</div>

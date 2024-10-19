@@ -1,0 +1,25 @@
+<div class="basket">
+    <h2>Ваши товары в корзине</h2>
+    <div *ngIf="cartItems.length > 0; else emptyCart">
+    <div *ngFor="let item of cartItems" class="cart-item">
+    <img [src]="item.thumbnail" alt="{{ item.title }}" class="product-image" />
+      <h3>{{ item.title }}</h3>
+      <p>Цена: {{ item.price }} $</p>
+      <p>Количество: {{ item.quantity }}</p>
+      <button (click)="increaseQuantity(item)">+</button>
+      <button (click)="decreaseQuantity(item)">-</button>
+    </div>
+  </div>
+  <button class="clear-button" (click)="clearBasket()"><img class="imgbascket" [src]="'image/sidebar/deleted.svg'"></button>
+    <ng-template #emptyCart>
+      <p>В корзине пока пусто. Пожалуйста, добавьте товары в корзину.</p>
+    </ng-template>
+  </div>
+  <div class="price-order-container">
+      <p>Общая цена: {{ totalPrice | currency: 'RUB' }}</p>
+      <p>Общая скидка: {{ totalDiscount | currency: 'RUB' }}</p>
+      <button class="order-button" (click)="placeOrder()">Заказать</button>
+    </div>
+  
+  
+  

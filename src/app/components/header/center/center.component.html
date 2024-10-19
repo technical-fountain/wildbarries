@@ -1,0 +1,9 @@
+<div class="center">
+    <div class="input">
+        <input type="text" placeholder="type your title" (keyup)="inputValueChangean($event)">
+    </div>
+    <app-search-result *ngIf="showResult"
+    [searchResult]="filteredResults">
+
+    </app-search-result>
+</div>

@@ -1,0 +1,46 @@
+.product {
+    text-align: center;
+    margin: 20px;
+  
+    img {
+      width: 300px;
+      height: 300px;
+      border-radius: 8px;
+    }
+  
+    h3 {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+  
+    p {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+  
+    button {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #218838;
+      }
+    }
+  }
+  
+  .loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 24px;
+    color: linear-gradient(0deg, rgba(36, 36, 36, .05), rgba(36, 36, 36, .05)), 
+    linear-gradient(97deg, #ed3cca .49%, #df34d2 14.88%, #d02bd9 29.27%, 
+                    #bf22e1 43.14%, #ae1ae8 57.02%, #9a10f0 70.89%, 
+                    #8306f7 84.76%, #7c1af8 99.15%);;
+  }
+  

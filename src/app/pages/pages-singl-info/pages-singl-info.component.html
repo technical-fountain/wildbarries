@@ -1,0 +1,15 @@
+<div class="product" *ngIf="product">
+    <img [src]="product.products[0].thumbnail" alt="{{ product.products[0].title }}" />
+    <h3>{{ product.products[0].title }}</h3>
+    <p>Price: {{ product.products[0].price }} $</p>
+    <p>Discount Percentage: {{ product.products[0].discountPercentage }}%</p>
+    <p>Discounted Total: {{ product.products[0].discountedTotal }} $</p>
+    <p>Quantity: {{ product.products[0].quantity }}</p>
+    <p>Total: {{ product.products[0].total }} $</p>
+    <button (click)="addToCart(product)">в корзину</button>
+  </div>
+  
+  <div *ngIf="!product" class="loading-spinner">
+    Loading...
+  </div>
+  

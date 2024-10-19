@@ -1,1 +1,10 @@
-HEllo
+<div class="main">
+  <h1>Hello</h1>
+  <app-header [hideSearchedResult]="hideSearchedResult"
+   (toggleSideBarFromHeader)="toggleSideBar()">
+  </app-header>
+  <app-sidebar [showSideBar]="showSideBar"></app-sidebar>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+</div>
+<span>weqweqwe esel es Heloo</span>

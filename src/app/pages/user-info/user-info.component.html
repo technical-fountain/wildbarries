@@ -1,0 +1,67 @@
+<div class="user-info">
+    <div class="form" [formGroup]="formGroup">
+        <div class="payment-methods">
+            <span>Available payment methods</span>
+            <select name="" id="" formControlName="paymentMethod"
+                [ngClass]="(checkValidation && formGroup.get('paymentMethod')?.errors)?'red':''">
+                <option value="Credit or debit card">Credit or debit card</option>
+            </select>
+            <span>Card number</span>
+            <input type="text" placeholder="Card number (16 digits)" formControlName="cardNumber"
+                [ngClass]="(checkValidation && formGroup.get('cardNumber')?.errors)?'red':''">
+            <span class="red-color"
+                *ngIf="checkValidation && (formGroup.get('cardNumber')?.errors?.['minlength'] || formGroup.get('cardNumber')?.errors?.['maxlength'])">Card
+                number must be 16 digits(only numbers)</span>
+        </div>
+        <div class="exp-date">
+            <div class="exp-month">
+                <span>Expiration month</span>
+                <select name="" id="" formControlName="expMonth"
+                    [ngClass]="(checkValidation && formGroup.get('expMonth')?.errors)?'red':''">
+                    <option [value]="month" *ngFor="let month of months">{{month}}</option>
+
+                </select>
+            </div>
+            <div class="exp-year">
+                <span>Expiration year</span>
+                <select name="" id="" formControlName="expYear"
+                    [ngClass]="(checkValidation && formGroup.get('expYear')?.errors)?'red':''">
+                    <option [value]="year" *ngFor="let year of years">{{year}}</option>
+                </select>
+                <span class="red-color" *ngIf="checkValidation && formGroup.get('expYear')?.errors?.['min']">Expiration
+                    year must be 2024 or more</span>
+            </div>
+
+        </div>
+
+        <div class="card-holder-name">
+            <span>Name as it appears on your card</span>
+            <input type="text" formControlName="cardOunerName">
+        </div>
+        <h2>Billing address</h2>
+        <div class="billing-details">
+            <div class="street">
+                <span>Street address</span>
+                <input type="text" formControlName="streetAddress">
+            </div>
+            <div class="city">
+                <span>City</span>
+                <input type="text" formControlName="city">
+            </div>
+            <div class="zip-code-details">
+                <div class="zip-code">
+                    <span>Zip code</span>
+                    <input type="number" formControlName="zipCode">
+                </div>
+                <div class="country">
+                    <span>Country</span>
+                    <select name="" id="" formControlName="country">
+                        <option [value]="country" *ngFor="let country of countries">{{country}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <button (click)="save()">Save</button>
+    </div>
+
+</div>

@@ -1,0 +1,13 @@
+<div class="center">
+    <div class="searchbar">
+        <input type="text" placeholder="Find in Wildberries" id="searchInput" 
+        [ngModel]="inputValue"
+            (keyup)="inputValueChange($event)">
+        <img src="images/header/camera.svg" alt="" [ngClass]="hideSearchIcons?'':'hide'">
+        <img src="images/header/close.svg" alt="" [ngClass]="hideSearchIcons?'hide':''">
+        <img src="images/header/search.svg" alt="" [ngClass]="hideSearchIcons?'hide':''">
+    </div>
+    <app-searched-data [filteredResults]="filteredResults"
+        *ngIf="filteredResults.length &&  hideSearchedResult">
+    </app-searched-data>
+</div>

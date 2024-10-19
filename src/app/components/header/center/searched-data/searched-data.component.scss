@@ -1,0 +1,31 @@
+.searched-data {
+    z-index: 2;
+    position: fixed;
+    top: 85px;
+    left: 370px;
+    width: 600px;
+    border-radius: 15px;
+    padding: 15px 0;
+    background-color: white;
+
+    .searched-result {
+        color: rgb(125, 122, 122);
+        font-size: 18px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 15px;
+        padding: 7px;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(248, 242, 242);
+        }
+    }
+}

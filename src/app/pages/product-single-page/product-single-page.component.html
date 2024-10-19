@@ -1,0 +1,25 @@
+<div class="product-single-page" *ngIf="product; else EmptyPage ">
+    <div class="left">
+        <img [src]="product.thumbnail" alt="">
+    </div>
+    <div class="rigth">
+        <div class="title" title="copyUrl" (click)="copyUrl()">{{product.title}}</div>
+        <div class="rates">
+            <div class="star-rates">
+                <img src="images/signs/star.svg " alt="">
+                <span>4,9</span>
+            </div>
+            <div class="rates-count">
+                <span>10953</span>
+                <span>Rates</span>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<ng-template #EmptyPage>
+    <div class="empty-page">
+        Loading ...
+    </div>
+</ng-template>

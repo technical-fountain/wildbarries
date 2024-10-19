@@ -1,0 +1,25 @@
+<div class="random-code">
+    <div class="random-code-form" [formGroup]="formGroup">
+        <h2>Fill code from sms</h2>
+        <span>Code sent to
+            <span>{{fullPhoneNumber}}</span>
+        </span>
+        <div class="code">
+            <input type="text" formControlName="codeSymbol1" (keyup)="checkCodeValidation($event)">
+            <input type="text" formControlName="codeSymbol2" (keyup)="checkCodeValidation($event)">
+            <input type="text" formControlName="codeSymbol3" (keyup)="checkCodeValidation($event)">
+            <input type="text" formControlName="codeSymbol4" (keyup)="checkCodeValidation($event)">
+            <input type="text" formControlName="codeSymbol5" (keyup)="checkCodeValidation($event)">
+            <input type="text" formControlName="codeSymbol6" (keyup)="checkCodeValidation($event)">
+        </div>
+        <span>Send new code after 00:49</span>
+    </div>
+</div>
+
+
+
+
+<!-- <input type="text"
+            maxlength="1"
+             *ngFor="let symbol of (randomCode | makeArray)" formControlName="codeSymbol"
+             (keyup)="checkCodeValidation()"> -->

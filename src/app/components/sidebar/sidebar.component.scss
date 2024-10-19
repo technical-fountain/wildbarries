@@ -1,0 +1,43 @@
+.sidebar {
+    z-index: 2;
+    position: fixed;
+    top: 110px;
+    left: 0;
+    width: 330px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+    overflow-y: auto;
+    height: 85vh;
+    transform: translate(-100%);
+    transition: 300ms ease-in-out;
+
+    .category {
+        font-size: 17px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 10px;
+        padding: 8px;
+        opacity: 0.7;
+
+        img {
+            width: 25px;
+            height: 25px;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(255, 245, 245);
+            border-radius: 8px;
+            opacity: 1;
+
+        }
+    }
+}
+
+.translate {
+    transform: translate(0%);
+}

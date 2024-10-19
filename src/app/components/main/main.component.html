@@ -1,0 +1,13 @@
+<div class="main" (scroll)="handleScrollEvent($event)">
+    <ng-container *ngFor="let product of products">
+        <app-product *ngFor="let item of product.products" 
+        [item]="item"
+         [routerLink]="['/product']"
+         [state]="{selectedProduct:item}"
+         ></app-product>
+    </ng-container>
+</div>
+
+
+
+<!-- [queryParams]="item" -->
